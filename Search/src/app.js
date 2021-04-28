@@ -23,6 +23,15 @@ app.get("/users", async (req, res) => {
 });
 
 // GET YORUBA USERS ON THE APP
+app.get("/yorubausers", async (req, res) => {
+    try {
+        fetch("http://localhost:3001/users")
+        .then(res => res.json())
+        .then(json => res.send(` there are ${json.length} users on this app`));
+    } catch(e) {
+        res.status(500).json(e);
+    }
+});
 
 // VERIFY PASSWORD use user and password
 
