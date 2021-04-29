@@ -7,12 +7,12 @@ app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
     res.json({ msg: "Users on this app!"});
-})
+});
 
 app.get("/users", async (req, res) => {
     const users = await User.find({});
     res.json(users);
-})
+});
 
 app.get("/users/:id", async (req, res) => {
     const id = req.params.id;
